@@ -147,6 +147,10 @@ html {
   cursor: none;
 }
 
+.text {
+  pointer-events: none;
+}
+
 .text-div .text {
   position: fixed;
   transform: translate(-50%, -50%);
@@ -187,11 +191,11 @@ html {
 /* DELETE AFTER MOBILE TEST*/
 .mobile-test {
   z-index: 100;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   position: fixed;
   background-color: red;
-  top: 25px;
-  left: 25px;
+  top: 5px;
+  left: 5px;
   border-radius: 1000px;
 }

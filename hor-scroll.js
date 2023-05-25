@@ -5,12 +5,13 @@ function isDesktop() {
   for (let keyword of mobileKeywords) {
     if (userAgent.includes(keyword)) {
 
-  window.addEventListener("load", changeBackgroundColor);
+      window.addEventListener("load", changeBackgroundColor);
 
-function changeBackgroundColor() {
-  var div = document.getElementById("mobile-test-id");
-  div.style.backgroundColor = "green";
-}
+      // Just to check whether its mobile or desktop
+      function changeBackgroundColor() {
+        var div = document.getElementById("mobile-test-id");
+        div.style.backgroundColor = "green";
+      }
 
       return false;
     }
@@ -20,20 +21,21 @@ function changeBackgroundColor() {
 }
 
 if (isDesktop()) {
+  
+  // Horizontal Scroll
   var container = document.querySelector('.container');
 
-  container.addEventListener('wheel', function (event) {
+    container.addEventListener('wheel', function(event) {
       event.preventDefault();
       container.scrollLeft += event.deltaY;
-  });
+    });
 
+  // Just to check whether its mobile or desktop
   window.addEventListener("load", changeBackgroundColor);
 
-function changeBackgroundColor() {
-  var div = document.getElementById("mobile-test-id");
-  div.style.backgroundColor = "blue";
-}
-
-  console.log('User is using a desktop.');
+  function changeBackgroundColor() {
+    var div = document.getElementById("mobile-test-id");
+    div.style.backgroundColor = "blue";
+  }
 }
 
