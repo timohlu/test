@@ -184,3 +184,14 @@ html {
   }
 }
 
+/* DELETE AFTER MOBILE TEST*/
+.mobile-test {
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  background-color: red;
+  top: 25px;
+  left: 25px;
+  border-radius: 1000px;
+}

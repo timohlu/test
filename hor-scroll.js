@@ -1,15 +1,39 @@
-var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+function isDesktop() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
 
-if (isMobile) {
-  // Code to be executed if the user is on a mobile device
-  console.log('User is using a mobile device.');
-  // Additional mobile-specific logic or actions
-} else {
+  for (let keyword of mobileKeywords) {
+    if (userAgent.includes(keyword)) {
+
+  window.addEventListener("load", changeBackgroundColor);
+
+function changeBackgroundColor() {
+  var div = document.getElementById("mobile-test-id");
+  div.style.backgroundColor = "green";
+}
+
+      return false;
+    }
+  }
+
+  return true;
+}
+
+if (isDesktop()) {
   var container = document.querySelector('.container');
 
-    container.addEventListener('wheel', function(event) {
+  container.addEventListener('wheel', function (event) {
       event.preventDefault();
       container.scrollLeft += event.deltaY;
-    });
+  });
+
+  window.addEventListener("load", changeBackgroundColor);
+
+function changeBackgroundColor() {
+  var div = document.getElementById("mobile-test-id");
+  div.style.backgroundColor = "blue";
+}
+
   console.log('User is using a desktop.');
 }
+

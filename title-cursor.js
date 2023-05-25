@@ -16,3 +16,4 @@
       var text = event.currentTarget.querySelector('.text');
       text.style.display = 'none';
     }
+    
