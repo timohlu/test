@@ -11,7 +11,7 @@
 
 <body>
   <nav class="nav-container">
-    <a href="#" class="nav-link">HOME</a>
+    <a href="index.html" class="nav-link">HOME</a>
     <a href="#" class="nav-link">ABOUT</a>
     <a href="#" class="nav-link">PLAYGROUND</a>
   </nav>
@@ -28,20 +28,21 @@
 
   <div class="container">
     <a id="1" href="#" class="proj-title-image">
-      <div class="title-container">
-        <p class="proj-title-text">Poses II</p>
+      <div class="title-container text-div" onmousemove="moveText(event)" onmouseout="hideText(event)">
+        <span class="text">Poses II</span>
         <img class="project-title-image" src="Assets/Cover-Images/Cover-Img_Poses2_2.png" alt="Cover Image Poses II">
       </div>
     </a>
     <a id="2" href="#" class="proj-title-image">
-      <div class="title-container">
-        <p class="proj-title-text">Liss</p>
+      <div class="title-container text-div" onmousemove="moveText(event)" onmouseout="hideText(event)">
+        <span class="text">Liss</span>
         <img class="project-title-image" src="Assets/Cover-Images/Cover-Img_Liss-3.jpg" alt="Cover Image Poses II">
       </div>
     </a>
+
+
     <a id="3" href="#" class="proj-title-image">
       <div class="title-container">
-        <p class="proj-title-text">Poses</p>
         <img class="project-title-image" src="Assets/Cover-Images/Cover-Img_Poses-web.jpg" alt="Cover Image Poses II">
       </div>
     </a>
@@ -62,6 +63,7 @@
 
   <!-- JS -->
   <script src="hor-scroll.js"></script>
+  <script src="title-cursor.js"></script>
 </body>
 
 </html>
