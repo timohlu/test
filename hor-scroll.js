@@ -8,10 +8,9 @@ function isDesktop() {
       window.addEventListener("load", changeBackgroundColor);
 
       // Just to check whether its mobile or desktop
-      function changeBackgroundColor() {
-        var div = document.getElementById("mobile-test-id");
-        div.style.backgroundColor = "green";
-      }
+  const div = document.querySelector(".mobile-test");
+  div.innerHTML = "";
+  div.appendChild(document.createTextNode("Mobile"));
 
       return false;
     }
@@ -21,21 +20,17 @@ function isDesktop() {
 }
 
 if (isDesktop()) {
-  
+
   // Horizontal Scroll
   var container = document.querySelector('.container');
 
-    container.addEventListener('wheel', function(event) {
-      event.preventDefault();
-      container.scrollLeft += event.deltaY;
-    });
+  container.addEventListener('wheel', function (event) {
+    event.preventDefault();
+    container.scrollLeft += event.deltaY;
+  });
 
   // Just to check whether its mobile or desktop
-  window.addEventListener("load", changeBackgroundColor);
-
-  function changeBackgroundColor() {
-    var div = document.getElementById("mobile-test-id");
-    div.style.backgroundColor = "blue";
-  }
+  const div = document.querySelector(".mobile-test");
+  div.innerHTML = "";
+  div.appendChild(document.createTextNode("Desktop"));
 }
-
