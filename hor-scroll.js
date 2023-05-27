@@ -1,3 +1,24 @@
+// Hide the class
+function hideClass(className) {
+  var elements = document.getElementsByClassName(className);
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.opacity = 0;
+  }
+}
+
+// Show the class again
+function showClass(className) {
+  var elements = document.getElementsByClassName(className);
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.opacity = 1;
+  }
+}
+
+// Example usage
+var className = "my-class";
+
+
+// ------------- Mobile
 function isDesktop() {
   const userAgent = navigator.userAgent.toLowerCase();
   const mobileKeywords = ['android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
@@ -5,12 +26,15 @@ function isDesktop() {
   for (let keyword of mobileKeywords) {
     if (userAgent.includes(keyword)) {
 
+      hideClass(className);
+
       window.addEventListener("load", changeBackgroundColor);
 
       // Just to check whether its mobile or desktop
-  const div = document.querySelector(".mobile-test");
-  div.innerHTML = "";
-  div.appendChild(document.createTextNode("Mobile"));
+      function changeBackgroundColor() {
+        var div = document.getElementById("mobile-test-id");
+        div.style.backgroundColor = "green";
+      }
 
       return false;
     }
@@ -19,7 +43,10 @@ function isDesktop() {
   return true;
 }
 
+// ------------- Desktop
 if (isDesktop()) {
+
+  showClass(className);
 
   // Horizontal Scroll
   var container = document.querySelector('.container');
@@ -30,7 +57,10 @@ if (isDesktop()) {
   });
 
   // Just to check whether its mobile or desktop
-  const div = document.querySelector(".mobile-test");
-  div.innerHTML = "";
-  div.appendChild(document.createTextNode("Desktop"));
+  window.addEventListener("load", changeBackgroundColor);
+
+  function changeBackgroundColor() {
+    var div = document.getElementById("mobile-test-id");
+    div.style.backgroundColor = "blue";
+  }
 }

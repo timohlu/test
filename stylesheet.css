@@ -63,41 +63,6 @@ html {
   text-decoration: underline;
 }
 
-.section-container {
-  color: black;
-  font-size: 1.5em;
-  text-decoration: none;
-  width: 200px;
-  height: 30px;
-  position: fixed;
-  bottom: 15px;
-  left: 50%;
-  transform: translate(-50%);
-  z-index: 10;
-  border-radius: 1000px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 5px 5px 5px;
-}
-
-.section-link {
-  background-color: transparent;
-  color: white;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  border-radius: 100px;
-}
-
-.section-link:current {
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  border-radius: 100px;
-}
-
 .container {
   white-space: nowrap;
   overflow-x: auto;
@@ -128,19 +93,15 @@ html {
   justify-content: start;
 }
 
-/* .proj-title-text {
-  color: white;
-  line-height: 1;
-  font-size: 4em;
-  position: absolute;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  mix-blend-mode: difference;
-} */
+.proj-title-text {
+  display: none;
+}
 
 /* Text on Div Mousemove */
 .text-div {
   display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 
 .text-div:hover {
@@ -159,8 +120,6 @@ html {
   left: 10px;
   background-color: transparent;
   padding: 5px;
-  display: none;
-
   color: white;
   line-height: 1;
   font-size: 1.2em;
@@ -169,6 +128,19 @@ html {
 
 /* Mobile */
 @media screen and (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .proj-title-image {
+    height: 100vh;
+  }
+
   .nav-container {
     width: clamp(200px, 330px, 95vw);
     font-size: 0.8rem;
@@ -177,30 +149,35 @@ html {
   .title-container {
     align-items: center;
     justify-content: center;
+    position: relative;
   }
 
   .proj-title-text {
+    display: block;
+    color: white;
     line-height: 1;
-    font-size: 3em;
+    font-size: 4em;
     position: absolute;
-    padding-bottom: 0px;
-    padding-left: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 10px;
+    padding-left: 15px;
+    mix-blend-mode: difference;
   }
 }
 
 /* DELETE AFTER MOBILE TEST*/
 .mobile-test {
   z-index: 100;
-  width: auto;
-  padding: 2px 15px 2px 15px;
+  width: 10px;
+  height: 10px;
   position: fixed;
-  background-color: transparent;
-  border: white 1px solid;
-  color: white;
+  background-color: white;
   font-size: 1em;
-  bottom: 50%;
+  top: 12px;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.2;
   border-radius: 1000px;
+  pointer-events: none;
 }
