@@ -198,7 +198,9 @@ html {
   border: white 1px solid;
   color: white;
   font-size: 1em;
-  top: 10px;
-  left: 10px;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
   border-radius: 1000px;
 }
